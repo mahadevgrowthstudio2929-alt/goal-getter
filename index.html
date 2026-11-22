@@ -1,498 +1,499 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#101820">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<title>The Goal Getter | Football Insights</title>
-
-<meta name="description" content="Explore football match insights, tactical observations and match-day analysis with The Goal Getter.">
+<title>GOAL GETTER 2.0 | Football Community</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg: #101820;
-  --panel: #17252d;
-  --lime: #d7ff43;
-  --blue: #51c7ff;
-  --white: #f7fafb;
-  --muted: #a4b4bc;
-}
-
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
-html {
-  min-height: 100%;
-  background: var(--bg);
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #050806;
 }
 
 body {
-  min-height: 100svh;
-  padding: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--white);
-  font-family: 'DM Sans', sans-serif;
-  background:
-    radial-gradient(ellipse at 95% 5%, rgba(81,199,255,.13), transparent 36%),
-    radial-gradient(ellipse at 0% 95%, rgba(215,255,67,.08), transparent 35%),
-    var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    padding: 14px;
 }
 
 .page {
-  width: 100%;
-  max-width: 430px;
-  position: relative;
-  overflow: hidden;
-  padding: 19px 19px 16px;
-  border: 1px solid rgba(255,255,255,.11);
-  border-radius: 23px;
-  background: linear-gradient(155deg, #192932 0%, #111b22 75%);
-  box-shadow: 0 22px 65px rgba(0,0,0,.35);
+    width: 100%;
+    max-width: 430px;
+    height: min(790px, calc(100dvh - 28px));
+    min-height: 530px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px;
+    background:
+        radial-gradient(ellipse at 50% 28%, rgba(175,145,66,0.13), transparent 48%),
+        linear-gradient(155deg, #101914 0%, #080d0a 45%, #050706 100%);
+    border: 1px solid rgba(204,177,105,0.23);
+    box-shadow: 0 20px 70px rgba(0,0,0,0.65);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 27px 23px 16px;
 }
 
-.topline {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid rgba(255,255,255,.10);
-}
+/* Background elements */
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
-}
-
-.logo-wrap {
-  width: 47px;
-  height: 47px;
-  flex-shrink: 0;
-  border-radius: 13px;
-  padding: 3px;
-  background: linear-gradient(135deg, var(--lime), var(--blue));
-  box-shadow: 0 0 19px rgba(81,199,255,.12);
-}
-
-.logo-wrap img {
-  display: block;
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  border-radius: 10px;
-  background: #17252d;
-}
-
-.brand-name {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 23px;
-  line-height: 1;
-  font-weight: 900;
-  letter-spacing: .3px;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.brand-name span {
-  color: var(--lime);
-}
-
-.brand-sub {
-  margin-top: 5px;
-  color: var(--muted);
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.tag {
-  flex-shrink: 0;
-  padding: 7px 9px;
-  border: 1px solid rgba(215,255,67,.28);
-  border-radius: 7px;
-  color: var(--lime);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: .6px;
-}
-
-.hero {
-  padding-top: 19px;
-}
-
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: var(--blue);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.eyebrow::before {
-  content: "";
-  width: 17px;
-  height: 2px;
-  background: var(--blue);
-}
-
-h1 {
-  margin-top: 10px;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(47px, 13vw, 60px);
-  line-height: .91;
-  font-weight: 900;
-  letter-spacing: -.5px;
-  text-transform: uppercase;
-}
-
-h1 .accent {
-  color: var(--lime);
-}
-
-.hero-art {
-  height: 110px;
-  margin: 15px 0 14px;
-  overflow: hidden;
-  position: relative;
-  border-radius: 13px;
-  border: 1px solid rgba(255,255,255,.12);
-  background:
-    linear-gradient(90deg, rgba(13,26,32,.96) 0%, rgba(13,26,32,.65) 52%, rgba(13,26,32,.15) 100%),
-    repeating-linear-gradient(0deg, transparent 0 22px, rgba(255,255,255,.04) 23px 24px),
-    linear-gradient(135deg, #1e4249, #182b34 65%, #2c4543);
+.glow {
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    background: rgba(190,157,82,0.09);
+    filter: blur(80px);
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
 }
 
 .pitch {
-  position: absolute;
-  right: -18px;
-  top: -36px;
-  width: 170px;
-  height: 180px;
-  border: 1px solid rgba(215,255,67,.43);
-  transform: rotate(-24deg);
-  border-radius: 45%;
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border: 1px solid rgba(190,157,82,0.055);
+    border-radius: 50%;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
 }
 
 .pitch::before {
-  content: "";
-  position: absolute;
-  left: 30px;
-  top: 24px;
-  width: 110px;
-  height: 125px;
-  border: 1px solid rgba(81,199,255,.55);
-  border-radius: 50%;
+    content: "";
+    position: absolute;
+    inset: 35px;
+    border: 1px solid rgba(190,157,82,0.055);
+    border-radius: 50%;
 }
 
 .pitch::after {
-  content: "";
-  position: absolute;
-  left: 76px;
-  top: 77px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--lime);
-  box-shadow: 0 0 24px var(--lime);
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background: rgba(190,157,82,0.06);
+    left: 50%;
 }
 
-.art-copy {
-  position: absolute;
-  z-index: 1;
-  left: 14px;
-  top: 17px;
-  max-width: 68%;
+/* Header */
+
+.topbar {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.art-copy strong {
-  display: block;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 26px;
-  font-weight: 800;
-  line-height: 1;
-  text-transform: uppercase;
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border: 1px solid rgba(201,174,104,0.25);
+    background: rgba(201,174,104,0.07);
+    border-radius: 30px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #d7c18b;
+    font-weight: 600;
 }
 
-.art-copy p {
-  margin-top: 7px;
-  color: #c4d2d8;
-  font-size: 10px;
-  line-height: 1.5;
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #b9d88b;
+    border-radius: 50%;
+    box-shadow: 0 0 9px #b9d88b;
 }
 
-.info {
-  font-size: 12px;
-  line-height: 1.7;
-  color: #d0dbe0;
+/* Logo */
+
+.logo-area {
+    position: relative;
+    z-index: 2;
+    margin-top: 34px;
+    width: 155px;
+    height: 155px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.info strong {
-  color: var(--white);
-  font-weight: 700;
+.logo-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(202,174,104,0.45);
+    box-shadow: 0 0 30px rgba(202,174,104,0.10);
+    animation: rotate 18s linear infinite;
 }
 
-.features {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 7px;
-  margin-top: 14px;
+.logo-ring::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #d2b56e;
+    border-radius: 50%;
+    top: 15px;
+    left: 23px;
+    box-shadow: 0 0 12px #d2b56e;
 }
 
-.feature {
-  padding: 11px 6px;
-  text-align: center;
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,.09);
-  background: rgba(255,255,255,.035);
+.logo-inner {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #1b2820, #080c09);
+    border: 1px solid rgba(218,190,122,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 0 35px rgba(0,0,0,0.7);
 }
 
-.feature-icon {
-  display: block;
-  color: var(--lime);
-  font-size: 16px;
-  font-weight: 800;
-  margin-bottom: 5px;
+.logo-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
 }
 
-.feature span:last-child {
-  display: block;
-  color: #dce6ea;
-  font-size: 9px;
-  line-height: 1.4;
-  font-weight: 700;
+@keyframes rotate {
+    to { transform: rotate(360deg); }
 }
 
-.cta {
-  display: flex;
-  width: 100%;
-  min-height: 53px;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 17px;
-  padding: 0 17px;
-  border: 0;
-  border-radius: 11px;
-  background: var(--lime);
-  color: #111b20;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: .15px;
-  cursor: pointer;
-  box-shadow: 0 6px 22px rgba(215,255,67,.13);
-  transition: transform .15s ease, box-shadow .15s ease;
+/* Branding */
+
+.brand {
+    position: relative;
+    z-index: 2;
+    margin-top: 25px;
 }
 
-.cta:active {
-  transform: scale(.98);
+.eyebrow {
+    font-family: 'Rajdhani', sans-serif;
+    color: #c4a968;
+    font-size: 12px;
+    letter-spacing: 5px;
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
-.cta .arrow {
-  font-size: 22px;
-  line-height: 1;
+.brand h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(27px, 8vw, 35px);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(180deg, #fff5d7, #d1b16b 55%, #8e7540);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.cta-note {
-  margin-top: 8px;
-  text-align: center;
-  color: #aab9c0;
-  font-size: 9px;
-  line-height: 1.5;
+.brand h1 span {
+    display: block;
+    font-size: 20px;
+    letter-spacing: 9px;
+    margin-top: 5px;
+    padding-left: 9px;
 }
+
+.separator {
+    width: 75px;
+    height: 1px;
+    margin: 19px auto;
+    background: linear-gradient(90deg, transparent, #c4a968, transparent);
+}
+
+.description {
+    position: relative;
+    z-index: 2;
+    max-width: 290px;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #aeb7af;
+    letter-spacing: 0.3px;
+}
+
+/* Highlights */
+
+.highlights {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.highlight {
+    flex: 1;
+    padding: 12px 5px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.015));
+    border: 1px solid rgba(198,170,103,0.15);
+    border-radius: 12px;
+}
+
+.highlight .icon {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.highlight p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #d8c38d;
+    letter-spacing: 0.7px;
+}
+
+/* CTA */
+
+.cta-area {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 25px;
+}
+
+.cta-label {
+    font-size: 10px;
+    color: #8c968e;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.join-btn {
+    position: relative;
+    width: 100%;
+    min-height: 57px;
+    border: 1px solid #e3ca89;
+    border-radius: 12px;
+    background: linear-gradient(110deg, #b18c45, #e2c986, #a98843);
+    color: #10130d;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(185,150,75,0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.join-btn:active {
+    transform: scale(0.97);
+}
+
+.join-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    transform: skewX(-20deg);
+    animation: shine 4s infinite;
+}
+
+@keyframes shine {
+    0%, 65% { left: -120%; }
+    100% { left: 150%; }
+}
+
+.btn-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.arrow {
+    font-size: 20px;
+}
+
+/* Footer */
 
 .footer {
-  margin-top: 14px;
-  padding-top: 11px;
-  border-top: 1px solid rgba(255,255,255,.09);
-  text-align: center;
-  color: #80939d;
-  font-size: 9px;
-  line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    margin-top: 18px;
+    width: 100%;
+}
+
+.footer p {
+    font-size: 9px;
+    color: #69756c;
+    letter-spacing: 1.1px;
+    line-height: 1.7;
 }
 
 .footer strong {
-  color: #b9c8ce;
-  font-weight: 700;
+    color: #b9a16a;
+    font-weight: 500;
 }
 
-@media (max-height: 740px) {
-  body {
-    padding: 7px;
-    align-items: flex-start;
-  }
+/* Small screens */
 
-  .page {
-    padding: 14px 15px 12px;
-  }
+@media(max-height: 650px) {
+    .page {
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
 
-  .topline {
-    padding-bottom: 11px;
-  }
+    .logo-area {
+        width: 110px;
+        height: 110px;
+        margin-top: 17px;
+    }
 
-  .hero {
-    padding-top: 14px;
-  }
+    .logo-inner {
+        width: 90px;
+        height: 90px;
+    }
 
-  h1 {
-    font-size: 47px;
-  }
+    .brand {
+        margin-top: 14px;
+    }
 
-  .hero-art {
-    height: 91px;
-    margin: 11px 0;
-  }
+    .separator {
+        margin: 12px auto;
+    }
 
-  .art-copy {
-    top: 13px;
-  }
+    .highlights {
+        margin-top: 15px;
+    }
 
-  .features {
-    margin-top: 10px;
-  }
+    .cta-area {
+        padding-top: 15px;
+    }
 
-  .feature {
-    padding: 8px 5px;
-  }
-
-  .cta {
-    min-height: 48px;
-    margin-top: 12px;
-  }
-
-  .footer {
-    margin-top: 10px;
-    padding-top: 8px;
-  }
+    .footer {
+        margin-top: 10px;
+    }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    transition: none !important;
-  }
-}
 </style>
- <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2323977738436560');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2323977738436560&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 </head>
 
 <body>
+
 <main class="page">
 
-  <header class="topline">
-    <div class="brand">
-      <div class="logo-wrap">
-        <img src="logo.png" alt="The Goal Getter logo"
-             onerror="this.style.display='none'">
-      </div>
-      <div>
-        <div class="brand-name">THE GOAL <span>GETTER</span></div>
-        <div class="brand-sub">Football Insights & Analysis</div>
-      </div>
+    <div class="glow"></div>
+    <div class="pitch"></div>
+
+    <header class="topbar">
+        <div class="status">
+            <span class="dot"></span>
+            FOOTBALL COMMUNITY
+        </div>
+    </header>
+
+    <div class="logo-area">
+        <div class="logo-ring"></div>
+
+        <div class="logo-inner">
+            <img src="logo.png" alt="Goal Getter 2.0 Logo">
+        </div>
     </div>
 
-    <div class="tag">MATCH DAY</div>
-  </header>
+    <section class="brand">
 
-  <section class="hero">
-    <div class="eyebrow">READ THE GAME</div>
+        <p class="eyebrow">THE GAME. THE INSIGHT.</p>
 
-    <h1>
-      THINK<br>
-      BEYOND THE<br>
-      <span class="accent">SCORE.</span>
-    </h1>
+        <h1>
+            GOAL GETTER
+            <span>2.0</span>
+        </h1>
 
-    <div class="hero-art" aria-hidden="true">
-      <div class="pitch"></div>
-      <div class="art-copy">
-        <strong>THE GAME.<br>THE DETAILS.</strong>
-        <p>Match insights. Tactical perspective.<br>A sharper view of football.</p>
-      </div>
-    </div>
+        <div class="separator"></div>
 
-    <p class="info">
-      Step into <strong>The Goal Getter</strong> for football match
-      insights, tactical observations and thoughtful match-day analysis —
-      all in one community.
-    </p>
+        <p class="description">
+            Explore football insights, match analysis
+            and community updates — all in one place.
+        </p>
 
-    <div class="features">
-      <div class="feature">
-        <span class="feature-icon">01</span>
-        <span>Match<br>Insights</span>
-      </div>
-      <div class="feature">
-        <span class="feature-icon">02</span>
-        <span>Tactical<br>Perspective</span>
-      </div>
-      <div class="feature">
-        <span class="feature-icon">03</span>
-        <span>Match-Day<br>Updates</span>
-      </div>
-    </div>
+    </section>
 
-    <button class="cta" id="joinButton" type="button">
-      <span>EXPLORE THE FOOTBALL COMMUNITY</span>
-      <span class="arrow" aria-hidden="true">↗</span>
-    </button>
+    <section class="highlights">
 
-    <p class="cta-note">
-      Join the conversation. Follow the game with a fresh perspective.
-    </p>
-  </section>
+        <div class="highlight">
+            <div class="icon">⚽</div>
+            <p>MATCH INSIGHTS</p>
+        </div>
 
-  <footer class="footer">
-    <strong>THE GOAL GETTER</strong> · Football Insights<br>
-    For informational purposes only. No outcomes are guaranteed.
-  </footer>
+        <div class="highlight">
+            <div class="icon">◈</div>
+            <p>GAME ANALYSIS</p>
+        </div>
+
+        <div class="highlight">
+            <div class="icon">✦</div>
+            <p>COMMUNITY</p>
+        </div>
+
+    </section>
+
+    <section class="cta-area">
+
+        <p class="cta-label">EXPLORE THE COMMUNITY</p>
+
+        <button
+            class="join-btn"
+            type="button"
+            onclick="window.open('https://t.me/+kGgMgaVyy4k3Mzc1', '_blank', 'noopener,noreferrer')">
+
+            <span class="btn-content">
+                JOIN COMMUNITY
+                <span class="arrow">→</span>
+            </span>
+
+        </button>
+
+    </section>
+
+    <footer class="footer">
+        <p>
+            FOOTBALL • ANALYSIS • COMMUNITY
+            <br>
+            Ads managed by <strong>Mahadev Growth Studio</strong>
+        </p>
+    </footer>
 
 </main>
-
-<script>
-(function () {
-  "use strict";
-
-  var joinButton = document.getElementById("joinButton");
-  var telegramUrl = "https://t.me/+A98vfeUzPAJhNzM1";
-
-  joinButton.addEventListener("click", function () {
-    window.open(telegramUrl, "_blank", "noopener,noreferrer");
-  });
-})();
-</script>
 
 </body>
 </html>
